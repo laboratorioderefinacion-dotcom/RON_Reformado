@@ -20,6 +20,15 @@ warnings.filterwarnings("ignore")
 # CONFIGURACIÓN DE LA PÁGINA
 # ==========================================================
 
+
+st.markdown("""
+<style>
+a[href^="#"] {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.set_page_config(
     page_title="RON Reformado",
     page_icon="🧪",
