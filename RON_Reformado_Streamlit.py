@@ -26,7 +26,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🧪 Estimación de RON - Reformado")
+st.title("🧪 Estimación de RON – Reformado")
 st.write("Modelo Random Forest con control metrológico")
 
 # ==========================================================
