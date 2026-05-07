@@ -69,8 +69,6 @@ except:
 
 archivo = st.file_uploader("📁 Cargar archivo CSV del LIMS", type=["csv"])
 
-st.info("⬆️ Cargar archivo y luego presionar 'Calcular RON'")
-
 # ==========================================================
 # FUNCIONES
 # ==========================================================
