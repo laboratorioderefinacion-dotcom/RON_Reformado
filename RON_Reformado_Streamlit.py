@@ -168,31 +168,17 @@ if archivo is not None:
             if ron_std <= UMBRAL_METODO:
                 color = "green"
                 estado = "ALTA CONFIABILIDAD"
+                icono = "🟢"
 
             elif ron_std < UMBRAL_METODO_SUP:
                 color = "orange"
                 estado = "CONFIABILIDAD MEDIA"
+                icono = "🟡"
 
             else:
                 color = "red"
                 estado = "BAJA CONFIABILIDAD"
-
-
-            st.markdown(
-                f"""
-                <div style="
-                    text-align: center;
-                    font-size: 26px;
-                    font-weight: bold;
-                    color: {color};
-                ">
-                    {estado}
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-
+                icono = "🔴"
 
             # ======================================================
             # RESULTADO VISUAL PRO
