@@ -171,7 +171,7 @@ if archivo is not None:
                 icono = "🟢"
 
             elif ron_std < UMBRAL_METODO_SUP:
-                color = "#FF8C00"
+                color = "orange"
                 estado = "CONFIABILIDAD MEDIA"
                 icono = "🟡"
 
@@ -196,10 +196,10 @@ if archivo is not None:
 
                     if ron_std < UMBRAL_METODO_SUP:
                         valor = str(ron_estimado).replace(".", ",")
-                        color = "black"
+                        color_ron = "black"
                     else:
                         valor = "❌"
-                        color = "red"
+                        color_ron = "red"
 
                     st.markdown(
                         f"""
@@ -207,7 +207,7 @@ if archivo is not None:
                             text-align: center;
                             font-size: 32px;
                             font-weight: bold;
-                            color: {color};
+                            color: {color_ron};
                         ">
                             {valor}
                         </div>
