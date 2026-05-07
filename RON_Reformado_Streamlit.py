@@ -130,16 +130,18 @@ if archivo is not None:
 
             datos_convertidos = {k: convertir(v) for k, v in datos.items()}
 
-            faltantes = [
-                k for k, v in datos_convertidos.items()
-                if isinstance(v, float) and np.isnan(v)
-            ]
+            if celda_producto == "REFORMADO_2201E":
 
-            if faltantes:
-                st.error("❌ Datos incompletos")
-                st.warning("Faltan ensayos:")
-                st.write(", ".join(faltantes))
-                st.stop()
+                faltantes = [
+                    k for k, v in datos_convertidos.items()
+                    if isinstance(v, float) and np.isnan(v)
+                ]
+
+                if faltantes:
+                    st.error("❌ Datos incompletos")
+                    st.warning("Faltan ensayos:")
+                    st.write(", ".join(faltantes))
+                    st.stop()
 
             df_pred = pd.DataFrame([datos])[columnas_modelo]
 
