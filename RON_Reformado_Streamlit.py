@@ -171,7 +171,7 @@ if archivo is not None:
                 icono = "🟢"
 
             elif ron_std < UMBRAL_METODO_SUP:
-                color = "orange"
+                color = "yellow"
                 estado = "CONFIABILIDAD MEDIA"
                 icono = "🟡"
 
