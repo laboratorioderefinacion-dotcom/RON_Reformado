@@ -193,7 +193,7 @@ if archivo is not None:
                     if ron_std < UMBRAL_METODO_SUP:
                         st.metric("", str(ron_estimado).replace(".", ","))
                     else:
-                        st.write("-----")
+                        st.write("X")
 
                 with col2:
                     st.markdown("### 📋 Información")
