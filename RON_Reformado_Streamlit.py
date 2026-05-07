@@ -200,7 +200,6 @@ if archivo is not None:
             st.metric("RON estimado", str(ron_estimado).replace(".", ","))
 
         st.write(f"**Estado:** {estado}")
-        st.write(f"**Desvío (std RF):** {round(ron_std,3)}")
 
     else:
         st.error("❌ El archivo no corresponde a REFORMADO")
