@@ -177,19 +177,6 @@ if archivo is not None:
                 color = "red"
                 estado = "BAJA CONFIABILIDAD"
 
-            st.markdown(
-                f"""
-                <div style="
-                    text-align: center;
-                    font-size: 26px;
-                    font-weight: bold;
-                    color: {color};
-                ">
-                    ● {estado}
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
 
             # ======================================================
             # RESULTADO VISUAL PRO
