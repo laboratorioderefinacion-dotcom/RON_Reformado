@@ -188,35 +188,18 @@ if archivo is not None:
 
                 col1, col2 = st.columns(2)
 
+                
                 with col1:
                     st.markdown("### 🔢 RON estimado")
                     if ron_std < UMBRAL_METODO_SUP:
                         st.metric("", str(ron_estimado).replace(".", ","))
-
-                    st.markdown(
-                        f"""
-                        <div style="text-align:center;">
-                            <div style="font-size:40px; font-weight:bold;">
-                                {valor_ron}
-                            </div>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+                    else:
+                        st.metric("❌")
 
                 with col2:
                     st.markdown("### 📋 LIMS")
+                    st.metric(f"{celda_lims}")
 
-                    st.markdown(
-                        f"""
-                        <div style="text-align:center;">
-                            <div style="font-size:40px; font-weight:bold;">
-                                {celda_lims}
-                            </div>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
 
                 st.markdown("---")
 
