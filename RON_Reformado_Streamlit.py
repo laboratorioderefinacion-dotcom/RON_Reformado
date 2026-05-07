@@ -192,12 +192,10 @@ if archivo is not None:
                     st.markdown("### 🔢 RON estimado")
                     if ron_std < UMBRAL_METODO_SUP:
                         st.metric("", str(ron_estimado).replace(".", ","))
-                    else:
-                        st.write("X")
 
                 with col2:
-                    st.markdown("### 📋 Información")
-                    st.write(f"LIMS: {celda_lims}")
+                    st.markdown("### 📋 LIMS")
+                    st.write(f"{celda_lims}")
 
                 st.markdown("---")
 
