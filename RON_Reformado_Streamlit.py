@@ -36,7 +36,6 @@ a[href^="#"] {
 """, unsafe_allow_html=True)
 
 st.title("🧪 Estimación de RON - Reformado")
-st.write("Modelo Random Forest con control metrológico")
 
 # ==========================================================
 # CRITERIOS METROLÓGICOS
@@ -58,7 +57,7 @@ def cargar_modelo():
 
 try:
     RF, columnas_modelo = cargar_modelo()
-    st.success("✅ Modelo cargado correctamente")
+    st.success("✅ Modelo Random Forest con control metrológico")
 except:
     st.error("❌ No se pudo cargar el modelo")
     st.stop()
@@ -168,7 +167,7 @@ if archivo is not None:
         elif ron_std < UMBRAL_METODO_SUP:
             estado = "⚠️ Confiabilidad MEDIA"
         else:
-            estado = "❌ BAJA confiabilidad - Verificar ASTM D2699"
+            estado = "❌ BAJA confiabilidad"
 
         # RESULTADO
         st.subheader("📊 Resultado")
