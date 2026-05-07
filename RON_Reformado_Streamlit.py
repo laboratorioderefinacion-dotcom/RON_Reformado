@@ -198,7 +198,7 @@ if archivo is not None:
 
                 with col2:
                     st.markdown("### 📋 LIMS")
-                    st.metric(f"{celda_lims}")
+                    st.write(f"{celda_lims}")
 
 
                 st.markdown("---")
