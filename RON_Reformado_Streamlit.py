@@ -193,15 +193,31 @@ if archivo is not None:
                 
                 with col1:
                     st.markdown("### 🔢 RON estimado")
+
                     if ron_std < UMBRAL_METODO_SUP:
-                        st.metric("", str(ron_estimado).replace(".", ","))
+                        valor = str(ron_estimado).replace(".", ",")
+                        color = "black"
                     else:
-                        st.write("❌")
+                        valor = "❌"
+                        color = "red"
 
+                    st.markdown(
+                        f"""
+                        <div style="
+                            text-align: center;
+                            font-size: 32px;
+                            font-weight: bold;
+                            color: {color};
+                        ">
+                            {valor}
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+
+                
                 with col2:
-                    st.markdown("### 📋 LIMS")
-                    st.write(f"{celda_lims}")
-
+                    st.markdown(f"### 📋 LIMS: {celda_lims}")
 
                 st.markdown("---")
 
