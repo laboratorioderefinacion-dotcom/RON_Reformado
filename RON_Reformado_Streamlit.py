@@ -40,7 +40,6 @@ a[href^="#"] { display: none !important; }
 # ==========================================================
 
 st.markdown("## 🧪 Estimación de RON - Reformado")
-st.write("Modelo Random Forest con validación metrológica")
 
 # ==========================================================
 # CRITERIOS
@@ -62,7 +61,7 @@ def cargar_modelo():
 
 try:
     RF, columnas_modelo = cargar_modelo()
-    st.success("✅ Modelo cargado correctamente")
+    st.success("✅ Modelo Random Forest con validación metrológica")
 except:
     st.error("❌ Error al cargar modelo")
     st.stop()
@@ -72,8 +71,6 @@ except:
 # ==========================================================
 
 archivo = st.file_uploader("📁 Cargar archivo CSV del LIMS", type=["csv"])
-
-st.info("1) Cargar archivo\n2) Presionar 'Calcular RON'")
 
 # ==========================================================
 # FUNCIONES
@@ -195,11 +192,12 @@ if archivo is not None:
                     st.markdown("### 🔢 RON estimado")
                     if ron_std < UMBRAL_METODO_SUP:
                         st.metric("", str(ron_estimado).replace(".", ","))
+                    else:
+                        st.write("-----")
 
                 with col2:
                     st.markdown("### 📋 Información")
                     st.write(f"LIMS: {celda_lims}")
-                    st.write(f"Desvío: {round(ron_std,3)}")
 
                 st.markdown("---")
 
@@ -212,9 +210,6 @@ if archivo is not None:
                     """,
                     unsafe_allow_html=True
                 )
-
-                if ron_std >= UMBRAL_METODO_SUP:
-                    st.warning("Se recomienda confirmación por ASTM D2699")
 
             else:
                 st.error("❌ Archivo no corresponde a REFORMADO")
